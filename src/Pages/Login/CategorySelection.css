@@ -1,0 +1,23 @@
+.custom-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .custom-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-card .card-img-top {
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .custom-card .card-title {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  

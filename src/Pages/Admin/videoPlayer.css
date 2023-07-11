@@ -1,0 +1,46 @@
+.video-container {
+    max-width: 600px; /* Adjust the maximum width as desired */
+    margin: 0 auto;
+  }
+  
+  .custom-video {
+    width: 100%; /* Adjust the width as desired */
+    height: auto;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .custom-card {
+    width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .custom-card-image {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .custom-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .custom-card-text {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  

@@ -1,0 +1,14 @@
+.choose-section{
+    padding-top: 100px;
+}
+.choose-description{
+    line-height: 30px;
+}
+.choose-list {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
+  .choose-list li {
+    margin-bottom: 10px;
+  }

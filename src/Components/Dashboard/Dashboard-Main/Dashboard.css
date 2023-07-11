@@ -1,0 +1,43 @@
+.dashboardRoot {
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+ 
+}
+
+.banner-text .dashboard-banner-title {
+  font-family: "Roboto Slab", serif;
+}
+.dash-main {
+  display: flex;
+  justify-content: center;
+}
+.banner-text .dashboard-banner-subtitle {
+  font-family: "Montserrat", sans-serif;
+}
+.dashboard-banner {
+    height: 100px;
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(254, 176, 89,0.5);
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 1rem; /* Added padding for spacing */
+  }
+  
+  .dashboard-banner .banner-text {
+    flex-grow: 1; /* Added to make the text fill the remaining space */
+    margin-right: 1rem;
+    padding: 0.5rem; /* Added margin to create space between text and image */
+  }
+  
+  .dashboard-banner img {
+    display: block;
+    margin: 0; /* Removed the margin to make the image fit into the banner */
+    max-height: 100%; /* Adjusted max-height to fit within the 100px height */
+    width: auto; /* Added width: auto to maintain aspect ratio */
+  }
+  
+  

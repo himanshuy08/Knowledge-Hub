@@ -1,0 +1,23 @@
+
+
+.modal-body {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .modal-body h5 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-body a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .modal-body a:hover {
+    text-decoration: underline;
+  }
+  
