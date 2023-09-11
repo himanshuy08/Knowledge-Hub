@@ -48,7 +48,7 @@ const LogIn = () => {
                 <div className="input-icon">
                   <i className="ri-user-line"></i>
                   <Input
-                    type="text"
+                    type="email"
                     name="username"
                     id="username"
                     placeholder="Enter Your Email"
