@@ -3,29 +3,33 @@ import { Container, Row, Col, Form, FormGroup, Button, Input } from 'reactstrap'
 import { useNavigate } from 'react-router-dom';
 import teacher from '../../assets/teacher.jpg';
 import { Toast, ToastBody, ToastHeader } from 'reactstrap';
+import { auth } from '../../Firebase/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const LogIn = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [showInvalidCredentialsToast, setShowInvalidCredentialsToast] = useState(false);
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (username === 'admin@gmail.com' && password === 'admin123') {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       // Successful login
-      localStorage.setItem('email', username);
+      const user = userCredential.user;
+      localStorage.setItem('email', user.email);
       navigate('/videoupload');
-    } else {
+    } catch (error) {
       // Failed login
       setShowInvalidCredentialsToast(true);
     }
@@ -49,11 +53,11 @@ const LogIn = () => {
                   <i className="ri-user-line"></i>
                   <Input
                     type="email"
-                    name="username"
-                    id="username"
+                    name="email"
+                    id="email"
                     placeholder="Enter Your Email"
-                    value={username}
-                    onChange={handleUsernameChange}
+                    value={email}
+                    onChange={handleEmailChange}
                     className="login-input-icon-username"
                     autoComplete="off"
                   />
@@ -81,9 +85,11 @@ const LogIn = () => {
             {showInvalidCredentialsToast && (
               <div className="toast-container">
                 <Toast>
-                  <ToastHeader toggle={() => setShowInvalidCredentialsToast(false)}>Invalid Credentials</ToastHeader>
+                  <ToastHeader toggle={() => setShowInvalidCredentialsToast(false)}>
+                    Invalid Credentials
+                  </ToastHeader>
                   <ToastBody>
-                    The username or password you entered is incorrect. Please try again.
+                    The email or password you entered is incorrect. Please try again.
                   </ToastBody>
                 </Toast>
               </div>
@@ -96,3 +102,4 @@ const LogIn = () => {
 };
 
 export default LogIn;
+

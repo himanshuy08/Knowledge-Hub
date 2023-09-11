@@ -85,6 +85,7 @@ const LogIn = () => {
                     onChange={handleUsernameChange}
                     className="login-input-icon-username"
                     autoComplete="off"
+                    required
                   />
                 </div>
               </FormGroup>
@@ -100,6 +101,7 @@ const LogIn = () => {
                     onChange={handlePasswordChange}
                     className="login-input-icon-password"
                     autoComplete="off"
+                    required
                   />
                 </div>
               </FormGroup>
