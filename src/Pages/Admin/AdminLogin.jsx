@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, FormGroup, Button, Input } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +8,7 @@ import { Toast, ToastBody, ToastHeader } from 'reactstrap';
 import { auth } from '../../Firebase/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-const LogIn = () => {
+const AdminLogIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -101,5 +103,5 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default AdminLogIn;
 

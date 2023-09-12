@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider , sendPasswordResetEmail} from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getDatabase} from "firebase/database";
 
@@ -24,4 +24,6 @@ const googleProvider = new GoogleAuthProvider();
 const storage = getStorage(app);
 const database = getDatabase(app);
 
-export { auth, googleProvider,storage,database };
+
+
+export { auth, googleProvider,storage,database , sendPasswordResetEmail};

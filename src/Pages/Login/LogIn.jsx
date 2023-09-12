@@ -10,14 +10,19 @@ const LogIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [google, setGoogle] = useState("");
+  const [error, setError] = useState(null); // Added error state
   const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
+    // Clear the error message when the user starts typing again
+    setError(null);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+    // Clear the error message when the user starts typing again
+    setError(null);
   };
 
   const handleEmailPasswordSignIn = () => {
@@ -28,7 +33,10 @@ const LogIn = () => {
         localStorage.setItem("email", user.email);
       })
       .catch((error) => {
-        console.log(error.message);
+        setError("Incorrect email or password.");
+         // Set your custom error message
+         setUsername("");
+         setPassword("");
       });
   };
 
@@ -40,7 +48,8 @@ const LogIn = () => {
         localStorage.setItem("email", user.email);
       })
       .catch((error) => {
-        console.log(error.message);
+        setError("Unable to sign in with Google."); // Set your custom error message
+
       });
   };
 
@@ -71,6 +80,11 @@ const LogIn = () => {
             <h1 className="mb-4">
               Welcome to Knowledge <span style={{ color: "#fe6532" }}>Hub</span>
             </h1>
+            {error && (
+              <div className="alert alert-danger">
+                {error}
+              </div>
+            )}
             <h6 className="mb-4">Hey Enter Your Details to Log In to Your Account.</h6>
             <Form onSubmit={handleSubmit}>
               <FormGroup className="m-3">
@@ -108,6 +122,11 @@ const LogIn = () => {
               <Button color="primary" style={{ width: 480 }} type="submit">
                 Log In
               </Button>
+              <p className="mt-2 text-end">
+                <Link to="/forgot-password" style={{ textDecoration: "none" }}>
+                  Forgot Password?
+                </Link>
+              </p>
             </Form>
             <p className="mt-4">or Sign In with</p>
             <div style={{ display: "flex", justifyContent: "center" }}>

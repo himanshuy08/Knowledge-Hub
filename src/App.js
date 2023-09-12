@@ -10,6 +10,7 @@ import CategorySelection from "./Pages/Login/CategorySelection";
 import AdminLogin from "./Pages/Admin/AdminLogin";
 import MaterialAdmin from "./Pages/Admin/MaterialAdmin";
 import Material from "./Components/Material/Material";
+import ForgotPassword from "./Pages/Login/ForgotPassword";
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/material' element={<Material/>}/>
         <Route path='/courses' element={<Course/>}/>
         <Route path='/videoupload' element={<VideoUpload/>}/>
+        <Route path='/forgot-password' element={<ForgotPassword/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -5,8 +5,9 @@ import { ref as storageRef, uploadBytesResumable, getDownloadURL } from "firebas
 import { ref as dbRef, push, update } from "firebase/database";
 import { CircularProgress, LinearProgress } from "@mui/material";
 import ScaffoldAdmin from "./ScaffoldAdmin";
-
+import useProtectedRoute from '../../api';
 const VideoUpload = () => {
+  useProtectedRoute();
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [videoFile, setVideoFile] = useState(null);

@@ -4,8 +4,9 @@ import { CircularProgress, LinearProgress } from "@mui/material";
 import ScaffoldAdmin from "./ScaffoldAdmin";
 import { getStorage, ref as storageRef, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { getDatabase, ref as databaseRef, push } from "firebase/database"; // Updated import
-
+import useProtectedRoute from '../../api';
 const MaterialAdmin = () => {
+  useProtectedRoute();
   const [title, setTitle] = useState("");
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
